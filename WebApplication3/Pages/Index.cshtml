@@ -1,0 +1,22 @@
+﻿@page
+@model WebApplication3.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<h2>User Details</h2>
+@if (Model.NewUser != null)
+{
+    <div>
+        <p>Username: @Model.NewUser.FirstName</p>
+        <p>Email: @Model.NewUser.UserName</p>
+        <p>pwd protected: @Model.NewUser.Password</p>
+        <p>pwd unprotected: @Model.unprotectedpassword</p>
+        <p>card protected: @Model.NewUser.CreditCardNo</p>
+        <p>card unprotected: @Model.unprotectedCard</p>
+        <!-- Display other fields as needed -->
+    </div>
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

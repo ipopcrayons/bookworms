@@ -1,0 +1,21 @@
+﻿@page "{code:int}"
+@model ErrorModel
+@{
+    ViewData["Title"] = "Error " + Model.RouteData.Values["code"];
+}
+
+@switch (Model.RouteData.Values["code"])
+{
+    case "404":
+        <h1>Page Not Found</h1>
+        <p>The requested page was not found.</p>
+        break;
+    case "403":
+        <h1>Forbidden</h1>
+        <p>You do not have permission to access this resource.</p>
+        break;
+    default:
+        <h1>Error @Model.RouteData.Values["code"]</h1>
+        <p>An error occurred.</p>
+        break;
+}
